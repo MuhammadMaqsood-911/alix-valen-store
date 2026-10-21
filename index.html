@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALIX VALEN — Modern Menswear</title>
+<meta name="description" content="ALIX VALEN: premium men's fashion with clean silhouettes and thoughtfully designed essentials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announce">FREE SHIPPING ON ORDERS ABOVE ₹2,000 &nbsp;|&nbsp; EASY RETURNS WITHIN 30 DAYS</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Main">
+      <a href="#top">Home</a><a href="#shop" data-reset>Shop</a><a href="#new-arrivals">New Arrivals</a><a href="#editorial">Collections</a><a href="#about">About</a>
+    </nav>
+    <a class="logo" href="#top" aria-label="ALIX VALEN home">
+      <svg viewBox="0 0 32 28" aria-hidden="true"><path d="M2 26 12 2l5 11M30 26 20 2l-5 11M9 26l7-13 7 13"/></svg>
+      <span>ALIX VALEN</span>
+    </a>
+    <div class="tools">
+      <form class="search" role="search" id="searchForm">
+        <label for="searchInput" class="sr-only">Search products</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="searchInput" type="search" placeholder="Search" autocomplete="off">
+      </form>
+      <button class="icon-btn" data-open-panel="wishDrawer" aria-label="Open wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9-9.5C2 7 4.2 4.5 7 4.5c2 0 3.6 1.2 5 3 1.4-1.8 3-3 5-3 2.8 0 5 2.5 4 6C19.5 15.4 12 20 12 20Z"/></svg>
+        <span class="badge" id="wishBadge" hidden>0</span>
+      </button>
+      <button class="icon-btn" data-open-panel="accountModal" aria-label="Open account panel">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+      </button>
+      <button class="icon-btn" data-open-panel="cartDrawer" aria-label="Open shopping bag">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge" id="cartBadge" hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-roledescription="carousel" aria-label="Featured looks">
+    <div class="slide is-active" data-slide>
+      <img src="assets/images/hero.jpg" alt="Man in a black overcoat and sunglasses standing against a sunlit concrete wall">
+      <div class="slide-text container">
+        <p class="eyebrow">MODERN MENSWEAR</p>
+        <h1>Modern Looks<br>for Everyday Vibes</h1>
+        <p>Elevate your everyday with thoughtfully designed essentials. Premium fabrics. Clean silhouettes. Made for what’s next.</p>
+        <a class="btn" href="#new-arrivals">SHOP NOW <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="slide" data-slide>
+      <img src="assets/images/editorial.jpg" alt="Two men in tailored dark outerwear outside a concrete building">
+      <div class="slide-text container">
+        <p class="eyebrow">TAILORING</p>
+        <h2 class="h1">Layers Made<br>to Last</h2>
+        <p>Structured coats and soft knits in a quiet, neutral palette.</p>
+        <a class="btn" href="#best-sellers">SHOP BEST SELLERS <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="slide" data-slide>
+      <img src="assets/images/hero.jpg" alt="Man in a black overcoat standing against a stone wall" class="flip">
+      <div class="slide-text container">
+        <p class="eyebrow">NEW SEASON</p>
+        <h2 class="h1">Easy Basics,<br>Sharp Finish</h2>
+        <p>Everyday tees, trousers and jackets that work from morning to night.</p>
+        <a class="btn" href="#new-arrivals">SEE NEW ARRIVALS <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="dots" role="tablist" aria-label="Choose slide"></div>
+  </section>
+
+  <div id="shop"></div>
+  <section class="container section" id="categories" aria-labelledby="catTitle">
+    <h2 id="catTitle" class="h2">Shop by category</h2>
+    <ul class="cats" id="catList"></ul>
+  </section>
+
+  <div class="container filter-note" id="filterNote" role="status" aria-live="polite" hidden></div>
+
+  <section class="container section" id="new-arrivals" aria-labelledby="newTitle" data-group="new">
+    <div class="sec-head">
+      <div><p class="eyebrow dark">NEW ARRIVALS</p><h2 id="newTitle" class="h2">Fresh Styles for<br>Every Occasion</h2></div>
+      <button class="btn btn-sm" data-viewall="new-arrivals">View All <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="grid" id="gridNew"></div>
+  </section>
+
+  <section class="editorial" id="editorial" aria-labelledby="edTitle">
+    <img src="assets/images/editorial.jpg" alt="Two men in tailored coats and knitwear beside a concrete building">
+    <div class="container ed-text">
+      <h2 id="edTitle" class="h1">Style That<br>Speaks For You.</h2>
+      <p>More than clothing — it’s a statement.<br>Alix Valen is for the ones who choose better.</p>
+      <a class="btn" href="#about">EXPLORE THE BRAND <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="container section" id="best-sellers" aria-labelledby="bestTitle" data-group="best">
+    <div class="sec-head">
+      <div><p class="eyebrow dark">BEST SELLER</p><h2 id="bestTitle" class="h2">Loved by Many</h2></div>
+      <button class="btn btn-sm" data-viewall="best-sellers">View All <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="grid" id="gridBest"></div>
+  </section>
+
+  <p class="container empty-results" id="noResults" role="status" hidden></p>
+
+  <section class="container about" id="about" aria-labelledby="aboutTitle">
+    <h2 id="aboutTitle" class="h2">About ALIX VALEN</h2>
+    <p>ALIX VALEN designs menswear around clean silhouettes, honest fabrics and a neutral palette that works season after season. Each piece is made to be worn often and styled easily.</p>
+  </section>
+
+  <section class="newsletter" aria-labelledby="nlTitle">
+    <div class="container nl-inner">
+      <div><h2 id="nlTitle" class="nl-title">Join Our Newsletter</h2><p>Get exclusive updates, new arrivals and special offers.</p></div>
+      <form id="nlForm" novalidate>
+        <div class="nl-row">
+          <label for="nlEmail" class="sr-only">Email address</label>
+          <input id="nlEmail" type="email" placeholder="Enter your email address" autocomplete="email">
+          <button class="btn" type="submit">SUBSCRIBE</button>
+        </div>
+        <p class="nl-msg" id="nlMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container foot-cols">
+    <div><h3>Shop</h3><ul><li><a href="#shop" data-reset>Men</a></li><li><a href="#new-arrivals">New Arrival</a></li><li><a href="#editorial">Collection</a></li><li><a href="#shop" data-reset>Accessories</a></li></ul></div>
+    <div><h3>Support</h3><ul><li><a href="#about">Shipping &amp; Return</a></li><li><a href="#about">Size Guide</a></li><li><a href="#about">FAQs</a></li><li><a href="#about">Privacy Policy</a></li></ul></div>
+    <div><h3>Contact</h3>
+      <address><span data-contact="line1">2810 N Church St PMB 46572</span><span data-contact="line2">Wilmington, Delaware</span><a href="tel:+911234567890" data-contact="phone">+91 123 456 7890</a><a href="mailto:alixvalen@gmail.com" data-contact="email">alixvalen@gmail.com</a></address>
+    </div>
+    <div><h3>Follow Us</h3><ul><li><a href="#top" data-social>Instagram ↗</a></li><li><a href="#top" data-social>Facebook ↗</a></li><li><a href="#top" data-social>Twitter ↗</a></li></ul></div>
+  </div>
+  <div class="container wordmark-wrap"><p class="wordmark" aria-hidden="true">ALIX VALEN</p></div>
+</footer>
+
+<dialog class="drawer" id="cartDrawer" aria-labelledby="cartTitle">
+  <div class="panel-head"><h2 id="cartTitle">Shopping bag</h2><button class="icon-btn" data-close aria-label="Close shopping bag"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="panel-body" id="cartBody"></div>
+  <div class="panel-foot" id="cartFoot"></div>
+</dialog>
+
+<dialog class="drawer" id="wishDrawer" aria-labelledby="wishTitle">
+  <div class="panel-head"><h2 id="wishTitle">Wishlist</h2><button class="icon-btn" data-close aria-label="Close wishlist"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="panel-body" id="wishBody"></div>
+</dialog>
+
+<dialog class="modal" id="productModal" aria-labelledby="pmName">
+  <button class="icon-btn modal-x" data-close aria-label="Close product details"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="pm" id="pmBody"></div>
+</dialog>
+
+<dialog class="modal small" id="accountModal" aria-labelledby="accTitle">
+  <button class="icon-btn modal-x" data-close aria-label="Close account panel"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="acc">
+    <h2 id="accTitle" class="h2">Account</h2>
+    <p class="demo-tag">Frontend demonstration — no real sign-in happens and nothing is sent to a server.</p>
+    <form id="accForm" novalidate>
+      <label for="accName">Name</label><input id="accName" type="text" autocomplete="name">
+      <label for="accEmail">Email</label><input id="accEmail" type="email" autocomplete="email">
+      <button class="btn" type="submit">CONTINUE AS DEMO USER</button>
+    </form>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
